@@ -18,7 +18,7 @@ function LogIn(){
 
              }
     try {
-        const response = await axios.post("http://localhost:1000/user", {email: email,password: pass});
+        const response = await axios.post("https://chat-backend-gray-six.vercel.app/user", {email: email,password: pass});
 
         // console.log(response.data);
 
