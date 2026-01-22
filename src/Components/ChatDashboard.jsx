@@ -13,7 +13,8 @@ const ChatDashboard = () => {
   const [currentUserId, setCurrentUserId] = useState(null);
   const navigate = useNavigate();
 
-  const backendUrl = import.meta.env.VITE_BACKEND_URL; // ✅ use env variable
+  // ✅ Get backend URL from .env
+  const backendUrl = import.meta.env.VITE_API_URL;
 
   // Fetch current logged-in user
   useEffect(() => {
@@ -29,7 +30,7 @@ const ChatDashboard = () => {
       }
     };
     fetchCurrentUser();
-  }, []);
+  }, [backendUrl, navigate]);
 
   // Logout
   const Logout = async () => {
@@ -52,7 +53,7 @@ const ChatDashboard = () => {
       }
     };
     fetchChatUsers();
-  }, []);
+  }, [backendUrl]);
 
   // Fetch messages for selected user
   useEffect(() => {
@@ -69,7 +70,7 @@ const ChatDashboard = () => {
       }
     };
     fetchMessages();
-  }, [selectedUser]);
+  }, [backendUrl, selectedUser]);
 
   // Search users
   useEffect(() => {
@@ -89,7 +90,7 @@ const ChatDashboard = () => {
       }
     };
     fetchSearch();
-  }, [searchKey]);
+  }, [backendUrl, searchKey]);
 
   // Send message
   const handleSendMessage = async () => {
@@ -97,13 +98,23 @@ const ChatDashboard = () => {
     try {
       await axios.post(
         `${backendUrl}/sendMessage`,
-        { receiverId: selectedUser._id, receiverName: selectedUser.name, message: newMessage },
+        {
+          receiverId: selectedUser._id,
+          receiverName: selectedUser.name,
+          message: newMessage,
+        },
         { withCredentials: true }
       );
 
       setMessages((prev) => [
         ...prev,
-        { senderId: currentUserId, senderName: "You", receiverId: selectedUser._id, receiverName: selectedUser.name, message: newMessage },
+        {
+          senderId: currentUserId,
+          senderName: "You",
+          receiverId: selectedUser._id,
+          receiverName: selectedUser.name,
+          message: newMessage,
+        },
       ]);
 
       setNewMessage("");
@@ -142,7 +153,9 @@ const ChatDashboard = () => {
             </ul>
           )}
         </div>
-        <button className="logout-btn" onClick={Logout}>Logout</button>
+        <button className="logout-btn" onClick={Logout}>
+          Logout
+        </button>
       </header>
 
       <div className="chat-body">

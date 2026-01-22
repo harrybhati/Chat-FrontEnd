@@ -6,13 +6,14 @@ function PublicRoute() {
   const [authChecked, setAuthChecked] = useState(false); // did we check?
   const [isAuth, setIsAuth] = useState(false);          // is user logged in?
 
+  const backendUrl = import.meta.env.VITE_API_URL; // ✅ match your .env
+
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/checkAuth`,
-          { withCredentials: true }
-        );
+        const res = await axios.get(`${backendUrl}/checkAuth`, {
+          withCredentials: true,
+        });
         if (res.data.user?.id) setIsAuth(true);
         else setIsAuth(false);
       } catch (err) {
@@ -23,9 +24,9 @@ function PublicRoute() {
     };
 
     checkAuth();
-  }, []);
+  }, [backendUrl]);
 
-  // while checking token, show nothing or loader
+  // while checking token, show a loader
   if (!authChecked) return <p>Loading...</p>;
 
   // if logged in, redirect to chat

@@ -8,11 +8,14 @@ function SingIn() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate();
 
+  // ✅ Use correct env variable
+  const backendUrl = import.meta.env.VITE_API_URL;
+
   const onSubmit = async (data) => {
     console.log("Form submitted:", data);
     try {
       const Resp = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/signup`,
+        `${backendUrl}/signup`, // ✅ updated
         data,
         { withCredentials: true }
       );

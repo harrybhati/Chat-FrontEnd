@@ -8,14 +8,18 @@ function LogIn() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate();
 
+  // ✅ Correct env variable
+  const backendUrl = import.meta.env.VITE_API_URL;
+
   const onSubmit = async (data) => {
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/login`,
+        `${backendUrl}/login`, // ✅ updated
         data,
         { withCredentials: true }
       );
       console.log("Login response:", response.data);
+
       if (response.data.user?.id) {
         navigate("/chat");
       }
