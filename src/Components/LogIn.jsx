@@ -18,7 +18,7 @@ function LogIn() {
         data,
         { withCredentials: true }
       );
-      console.log("Login response:", response.data);
+      // console.log("Login response:", response.data);
 
       if (response.data.user?.id) {
         navigate("/chat");

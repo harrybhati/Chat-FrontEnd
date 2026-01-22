@@ -12,7 +12,7 @@ function SingIn() {
   const backendUrl = import.meta.env.VITE_API_URL;
 
   const onSubmit = async (data) => {
-    console.log("Form submitted:", data);
+    // console.log("Form submitted:", data);
     try {
       const Resp = await axios.post(
         `${backendUrl}/signup`, // ✅ updated
