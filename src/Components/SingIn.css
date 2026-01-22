@@ -1,0 +1,171 @@
+/* ======================
+   Page Centering (Base)
+   ====================== */
+.signup-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1f2933, #111827);
+  padding: 16px;
+}
+
+/* ======================
+   Base (Mobile first)
+   ====================== */
+.signup-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Title */
+.signup-card h2 {
+  text-align: center;
+  margin-bottom: 18px;
+  color: #1f2933;
+}
+
+/* Form */
+.signup-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.signup-card label {
+  font-size: 13px;
+  margin-bottom: 4px;
+  margin-top: 12px;
+  color: #374151;
+}
+
+/* Inputs */
+.signup-card input {
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 7px;
+  border: 1px solid #d1d5db;
+  outline: none;
+}
+
+.signup-card input:focus {
+  border-color: blueviolet;
+  box-shadow: 0 0 0 1px blueviolet;
+}
+
+/* Error message */
+.signup-card p {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Submit Button */
+.signup-card button {
+  margin-top: 18px;
+  padding: 10px;
+  background: blueviolet;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.signup-card button:hover {
+  background: #6d28d9;
+}
+
+/* Login link */
+.signup-card a {
+  color: blueviolet;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Footer text */
+.footer-text {
+  margin-top: 14px;
+  font-size: 12px;
+  color: blueviolet;
+  text-align: center;
+}
+
+/* ======================
+   TABLET (≥ 600px)
+   ====================== */
+@media (min-width: 600px) {
+  .signup-card {
+    max-width: 420px;
+    padding: 26px 28px;
+    border-radius: 12px;
+  }
+
+  .signup-card h2 {
+    font-size: 22px;
+  }
+
+  .signup-card label {
+    font-size: 14px;
+  }
+
+  .signup-card input {
+    font-size: 15px;
+    padding: 11px 13px;
+  }
+
+  .signup-card button {
+    font-size: 15px;
+    padding: 11px;
+  }
+
+  .footer-text {
+    font-size: 13px;
+  }
+}
+
+/* ======================
+   DESKTOP (≥ 900px)
+   ====================== */
+@media (min-width: 900px) {
+  .signup-card {
+    max-width: 480px;
+    padding: 30px 34px;
+  }
+
+  .signup-card h2 {
+    font-size: 24px;
+  }
+
+  .signup-card input {
+    font-size: 16px;
+  }
+
+  .signup-card button {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+/* ======================
+   LARGE DESKTOP (≥ 1200px)
+   ====================== */
+@media (min-width: 1200px) {
+  .signup-card {
+    max-width: 540px;
+    padding: 36px 40px;
+  }
+}
+
+/* ======================
+   SMALL MOBILE (≤ 480px)
+   ====================== */
+@media (max-width: 480px) {
+  .signup-container {
+    padding: 12px;
+  }
+}

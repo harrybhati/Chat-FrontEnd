@@ -1,0 +1,197 @@
+/* ======================
+   PAGE WRAPPER
+====================== */
+.loginPage {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1f2933, #111827);
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ======================
+   CARD
+====================== */
+.loginCard {
+  background: #ffffff;
+  width: 100%;
+  max-width: 380px;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  transition: all 0.3s ease;
+}
+
+/* ======================
+   TITLE
+====================== */
+.loginTitle {
+  font-size: 24px;
+  text-align: center;
+  color: #1f2933;
+  margin-bottom: 24px;
+}
+
+/* ======================
+   INPUTS
+====================== */
+.loginInput {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.loginInput:focus {
+  border-color: blueviolet;
+  box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.2);
+}
+
+/* ======================
+   ERROR MESSAGES
+====================== */
+.errorMsg {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* ======================
+   BUTTON
+====================== */
+.loginBtn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: blueviolet;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.loginBtn:hover {
+  background-color: #6d28d9;
+}
+
+/* ======================
+   LINKS
+====================== */
+.loginText {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.loginText a {
+  color: blueviolet;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.loginText a:hover {
+  text-decoration: underline;
+}
+
+/* ======================
+   FOOTER
+====================== */
+.footerText {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 13px;
+  color: blueviolet;
+}
+
+/* ======================
+   TABLET (≥600px)
+====================== */
+@media (min-width: 600px) {
+  .loginCard {
+    max-width: 420px;
+    padding: 32px;
+    border-radius: 16px;
+  }
+
+  .loginTitle {
+    font-size: 26px;
+  }
+
+  .loginInput {
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  .loginBtn {
+    font-size: 17px;
+    padding: 14px;
+  }
+}
+
+/* ======================
+   DESKTOP (≥900px)
+====================== */
+@media (min-width: 900px) {
+  .loginCard {
+    max-width: 480px;
+    padding: 36px;
+  }
+
+  .loginTitle {
+    font-size: 28px;
+  }
+
+  .loginInput {
+    font-size: 17px;
+    padding: 16px;
+  }
+
+  .loginBtn {
+    font-size: 18px;
+    padding: 16px;
+  }
+}
+
+/* ======================
+   LARGE DESKTOP (≥1200px)
+====================== */
+@media (min-width: 1200px) {
+  .loginCard {
+    max-width: 540px;
+    padding: 40px;
+  }
+
+  .loginTitle {
+    font-size: 30px;
+  }
+
+  .loginInput {
+    font-size: 18px;
+    padding: 18px;
+  }
+
+  .loginBtn {
+    font-size: 19px;
+    padding: 18px;
+  }
+
+  .loginText {
+    font-size: 16px;
+  }
+
+  .footerText {
+    font-size: 15px;
+  }
+}
